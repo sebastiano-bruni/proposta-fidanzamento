@@ -1,14 +1,13 @@
 const canvas = document.getElementById('fireworksCanvas');
 const ctx = canvas.getContext('2d');
 
-// Imposta stile canvas
+// Stile e dimensioni canvas
 canvas.style.position = 'fixed';
 canvas.style.top = 0;
 canvas.style.left = 0;
 canvas.style.zIndex = -1;
 canvas.style.pointerEvents = 'none';
 
-// Adatta il canvas allo schermo
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -44,7 +43,7 @@ function animate() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    particles = particles.filter(p => p.alpha > 0); // Rimuove quelle invisibili
+    particles = particles.filter(p => p.alpha > 0);
 
     for (let p of particles) {
         p.x += Math.cos(p.angle) * p.speed;
@@ -60,13 +59,15 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-// Funzione richiamata dal bottone "Cliccami"
-function mostraVideo() {
-    document.getElementById('videoContainer').style.display = 'block';
-    document.getElementById('propostaVideo').play();
-
-    // Avvia fuochi d’artificio
+// Avvia i fuochi all'ingresso nella pagina
+window.addEventListener('DOMContentLoaded', () => {
     createFirework();
     setInterval(createFirework, 1500);
     animate();
+});
+
+// Solo mostra il video quando clicchi
+function mostraVideo() {
+    document.getElementById('videoContainer').style.display = 'block';
+    document.getElementById('propostaVideo').play();
 }
