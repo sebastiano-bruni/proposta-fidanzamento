@@ -35,15 +35,5 @@
 </div>
 
 <script src="script.js"></script>
-<!-- subito dentro <body>, o in fondo prima di </body> -->
-<audio id="backgroundMusic" src="assets/musica_leggera.mp3" autoplay loop></audio>
-
-<script>
-    const music = document.getElementById('backgroundMusic');
-    music.volume = 0.3;
-    music.play().catch(err => {
-        console.log("Autoplay bloccato o errore:", err);
-    });
-</script>
 </body>
 </html>
