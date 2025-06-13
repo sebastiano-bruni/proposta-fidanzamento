@@ -95,13 +95,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const music = document.getElementById('backgroundMusic');
-    if (music) {
-        music.volume = 0.2;
-        music.play().catch((err) => {
-            console.log("Autoplay bloccato dal browser: ", err);
-        });
-    }
-});
+
 

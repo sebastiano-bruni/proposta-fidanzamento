@@ -17,3 +17,5 @@ function aggiornaTimer() {
 // Avvia subito e aggiorna ogni secondo
 aggiornaTimer();
 setInterval(aggiornaTimer, 1000);
+
+
