@@ -1,65 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Per Te, Giulia ❤️</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to bottom, #ffe4e1, #fff);
-            color: #333;
-            text-align: center;
-            padding: 2rem;
-        }
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: #b30059;
-        }
-        .heart {
-            font-size: 4rem;
-            color: red;
-            animation: pulse 1.5s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        .letter {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            background-color: #b30059;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .button:hover {
-            background-color: #800040;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Per Silvia ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="heart">❤️</div>
-<h1>Per te, Giulia</h1>
+<h1>Per te, Silvia</h1>
 <div class="letter">
-    <p>Cara Giulia,</p>
+    <p>Cara Silvia,</p>
     <p>
         Ogni giorno con te è un dono. I tuoi sorrisi, i nostri momenti insieme,
         i sogni che condividiamo… tutto mi fa capire quanto sei speciale per me.
@@ -67,8 +18,19 @@
     <p>
         Oggi voglio chiederti qualcosa di importante, con tutto il cuore...
     </p>
-    <h2>Vuoi sposarmi?</h2>
-    <button class="button" onclick="alert('Hai detto SÌ! 💍 Ti amo!')">Sì ❤️</button>
+    <h2>Ti vuoi fidanzare?</h2>
+    <button class="button">NO</button>
+    <button class="button" onclick="mostraVideo()">Sì ❤️</button>
 </div>
+
+<!-- Video nascosto -->
+<div id="videoContainer" style="display: none; margin-top: 30px; text-align: center;">
+    <video id="propostaVideo" width="80%" controls>
+        <source src="assets/proposta.mp4" type="video/mp4">
+        Il tuo browser non supporta il video.
+    </video>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

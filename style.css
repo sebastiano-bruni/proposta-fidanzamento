@@ -1,0 +1,47 @@
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, #ffe4e1, #fff);
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+}
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #b30059;
+}
+.heart {
+    font-size: 4rem;
+    color: red;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+.letter {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #b30059;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.button:hover {
+    background-color: #800040;
+}
