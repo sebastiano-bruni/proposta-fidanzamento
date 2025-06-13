@@ -1,5 +1,5 @@
 // Data di inizio conoscenza (anno, mese-1, giorno, ora, minuti)
-const dataInizio = new Date(2024, 9, 8, 21, 0); // 8 ottobre 2024, 21:00
+const dataInizio = new Date(2024, 9, 6, 3, 0); // 6 ottobre 2024, 03:00
 
 function aggiornaTimer() {
     const adesso = new Date();
