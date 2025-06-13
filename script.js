@@ -30,7 +30,7 @@ function createFirework() {
             x,
             y,
             radius: random(1, 3),
-            color: `hsl(${Math.floor(random(0, 360))}, 100%, 60%)`,
+            hue: Math.floor(random(0, 360)),
             angle: random(0, 2 * Math.PI),
             speed: random(1, 5),
             alpha: 1,
@@ -52,7 +52,7 @@ function animate() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.color.match(/\d+/g)[0]}, 100%, 60%, ${p.alpha})`;
+        ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${p.alpha})`;
         ctx.fill();
     }
 
@@ -68,6 +68,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Solo mostra il video quando clicchi
 function mostraVideo() {
-    document.getElementById('videoContainer').style.display = 'block';
-    document.getElementById('propostaVideo').play();
+    const container = document.getElementById('videoContainer');
+    const video = document.getElementById('propostaVideo');
+    container.style.display = 'block';
+    video.play();
+    video.requestFullscreen().catch(() => {}); // Non sempre funziona, ma ci prova
 }
