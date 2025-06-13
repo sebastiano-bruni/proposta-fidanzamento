@@ -30,7 +30,7 @@ function createFirework() {
             x,
             y,
             radius: random(1, 3),
-            hue: Math.floor(random(0, 360)),
+            hue: [340, 0, 330, 320, 290, 20][Math.floor(Math.random() * 6)], // sfumature romantiche
             angle: random(0, 2 * Math.PI),
             speed: random(1, 5),
             alpha: 1,
@@ -74,3 +74,34 @@ function mostraVideo() {
     video.play();
     video.requestFullscreen().catch(() => {}); // Non sempre funziona, ma ci prova
 }
+
+function lanciaCuori() {
+    for (let i = 0; i < 30; i++) {
+        const cuore = document.createElement('div');
+        cuore.classList.add('heart-falling');
+        cuore.innerText = '❤️';
+        cuore.style.left = `${Math.random() * 100}vw`;
+        cuore.style.fontSize = `${random(16, 32)}px`;
+        document.body.appendChild(cuore);
+        setTimeout(() => cuore.remove(), 5000);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    createFirework();
+    setInterval(createFirework, 1500);
+    animate();
+    lanciaCuori(); // lancio cuori iniziale
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const music = document.getElementById('backgroundMusic');
+    if (music) {
+        music.volume = 0.2;
+        music.play().catch((err) => {
+            console.log("Autoplay bloccato dal browser: ", err);
+        });
+    }
+});
+
