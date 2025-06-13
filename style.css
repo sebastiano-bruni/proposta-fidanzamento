@@ -5,15 +5,17 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     background-color: #000; /* sfondo nero per fuochi d’artificio */
-    color: white;
+    color: #ffffff;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* Titolo principale */
 h1 {
-    font-size: clamp(24px, 6vw, 60px);
+    font-size: clamp(24px, 6vw, 48px);
     margin-top: 40px;
     margin-bottom: 20px;
+    color: #ffcad4;
 }
 
 /* Testo della lettera */
@@ -21,38 +23,41 @@ h1 {
     padding: 20px;
     margin: auto;
     max-width: 90%;
-    font-size: clamp(16px, 4vw, 28px);
+    font-size: clamp(16px, 4vw, 22px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+/* Sottotitolo finale */
+h2 {
+    font-size: clamp(20px, 5vw, 30px);
+    margin-top: 40px;
+    color: #fcb0b3;
 }
 
 /* Bottone */
 .button {
-    padding: 10px 20px;
-    font-size: clamp(18px, 5vw, 32px);
-    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: clamp(18px, 5vw, 26px);
+    margin: 15px 10px;
     border: none;
-    border-radius: 10px;
-    background-color: #ff69b4;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ff69b4, #ff85c1);
     color: white;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.6);
-    transition: transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .button:hover {
     transform: scale(1.05);
-}
-
-/* Video container */
-video {
-    max-width: 90vw;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
 }
 
 /* Cuore in alto */
 .heart {
-    font-size: clamp(24px, 8vw, 64px);
+    font-size: clamp(30px, 10vw, 60px);
     margin-top: 20px;
 }
 
@@ -65,4 +70,42 @@ video {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
+}
+
+/* Video container */
+video {
+    max-width: 90vw;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+}
+
+/* Sezione video */
+#videoContainer {
+    display: none;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Miglioramenti mobile */
+@media (max-width: 600px) {
+    .letter {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-top: 20px;
+    }
+
+    .button {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .heart {
+        margin-top: 10px;
+    }
 }
